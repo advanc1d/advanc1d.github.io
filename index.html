@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,  initial-scale=1.0">
+    <title>Online magazine</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <a href=""><img src="logonew.png" alt="logo" class="logo"></a>
+        <ul class="header-list">
+            <li><a href="">Про нас</a></li>
+            <li class="dropdown">
+                <a href="#" id="contBtn">Контакти</a>
+                <ul class="dropdown-menu" id="contMenu">
+                    <li><a href="#">Телефон</a></li>
+                    <li><a href="#">Самовивіз</a></li>
+                    <li><a href="#">Офіс</a></li>
+                </ul>
+            </li>
+            
+            <!-- Додаємо контейнер для меню магазинів -->
+            <li class="dropdown">
+                <a href="#" id="shopsBtn">Магазини</a>
+                <ul class="dropdown-menu" id="shopsMenu">
+                    <li><a href="#">Київ, вул. Хрещатик, 1</a></li>
+                    <li><a href="#">Львів, пр. Свободи, 10</a></li>
+                    <li><a href="#">Одеса, вул. Дерибасівська, 5</a></li>
+                    <li><a href="#">Дніпро, пр. Яворницького, 20</a></li>
+                </ul>
+            </li>
+
+            <li><a href="">Підтримка</a></li>
+        </ul>
+        <a href=""><p class="profile">P</p></a>
+    </header>
+    <main>
+        <div class="container">
+            <div class="card">
+                <div class="photo"></div>
+                <h2 class="product-name">Water</h2>
+                <p class="description">Cool water</p>
+            </div>
+            <div class="card">
+                <div class="photo"></div>
+                <h2 class="product-name">Water</h2>
+                <p class="description">Cool water</p>
+            </div>
+            <div class="card">
+                <div class="photo"></div>
+                <h2 class="product-name">Water</h2>
+                <p class="description">Cool water</p>
+            </div>
+            <div class="card">
+                <div class="photo"></div>
+                <h2 class="product-name">Water</h2>
+                <p class="description">Cool water</p>
+            </div>
+            <div class="card">
+                <div class="photo"></div>
+                <h2 class="product-name">Water</h2>
+                <p class="description">Cool water</p>
+            </div>
+            <div class="card">
+                <div class="photo"></div>
+                <h2 class="product-name">Water</h2>
+                <p class="description">Cool water</p>
+            </div>
+            <div class="card">
+                <div class="photo"></div>
+                <h2 class="product-name">Water</h2>
+                <p class="description">Cool water</p>
+            </div>
+            <div class="card">
+                <div class="photo"></div>
+                <h2 class="product-name">Water</h2>
+                <p class="description">Cool water</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Права захищені мною</p>
+    </footer>
+
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <div class="modal-content">
+                
+                <div class="modal-left">
+                    <div id="modalPhoto" class="modal-photo"></div>
+                </div>
+
+                <div class="modal-right">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                    <div id="modalPrice"></div>
+                    <button id="modalBtn" class="buy-btn">Купити</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
