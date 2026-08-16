@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cs2 guide map</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CS2 Guide map</h1>
+  </header>
+  <main>
+    <img src="mirage.webp" alt="map" class="map">
+    <img src="smoke.png" alt="" class="smoke trash" id="smokeTrash">
+    <img src="smoke.png" alt="" class="smoke pit-angle" id="smokePitAngle">
+    <img src="molotov.png" alt="" class="molotov pit-hg" id="molyPitHg">
+    <img src="molotov.png" alt="" class="molotov top-mid" id="molyTopMid">
+    <img src="flashbang.png" alt="" class="flash pit-near-door" id="flashPitNearDoor">
+  </main>
+  <footer>
+      <div>
+        <button class="btn" id="btnSmokes">Smoke</button>
+        <button class="btn" id="btnMolotovs">Molotov</button>
+        <button class="btn" id="btnFlashes">Flash</button>
+        <button class="btn" id="btnGrenades">Grenade</button>
+      </div>
+      <button class="btn">Chips</button>
+  </footer>
+  <div class="modal-overlay hidden" id="modalOverlayST">
+    <div class="modal-content" id="modalContentST">
+      <button class="close-btn" id="modalCloseST">X</button>
+      <h1 class="modal-title open" id="modalTitleSTW">Smoke: Window</h1>
+      <h1 class="modal-title" id="modalTitleSTC">Smoke: Connector</h1>
+      <h1 class="modal-title" id="modalTitleSTS">Smoke: Short</h1>
+      <div class="target-btn">
+        <button class="btn active" id="smokeTrashWind">Window</button>
+        <button class="btn" id="smokeTrashCon">Conn</button>
+        <button class="btn" id="smokeTrashShort">Short</button>
+      </div>
+      <iframe class="smoke-trash-window open" id="videoSTW"
+        width="960"
+        height="540" 
+        src="https://www.youtube.com/embed/XE8Ovi1Y7X4?si=djGquT9H7e2D5oQu" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+      <iframe class="smoke-trash-con" id="videoSTC"
+        width="960"
+        height="540" 
+        src="https://www.youtube.com/embed/dgdtbOvEN0E?si=pRafOf7ISzEJNW4P" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+      <iframe class="smoke-trash-short" id="videoSTS"
+        width="960"
+        height="540" 
+        src="https://www.youtube.com/embed/dgdtbOvEN0E?si=pRafOf7ISzEJNW4P" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+  <div class="modal-overlay hidden" id="modalOverlaySPA">
+    <div class="modal-content" id="modalContentSPA">
+      <button class="close-btn" id="modalCloseSPA">X</button>
+      <h1 class="modal-title open" id="modalTitleSPA">Smoke: Ticket</h1>
+      <iframe class="smoke-pitAngle-ticket open" id="videoSPAT"
+        width="960"
+        height="540" 
+        src="https://www.youtube.com/embed/qu-Um8Y4r98?si=vKIWPqa4vTpSNPuv" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="modalOverlayMPHG">
+    <div class="modal-content" id="modalContentMPHG">
+      <button class="close-btn" id="modalCloseMPHG">X</button>
+      <h1 class="modal-title open" id="modalTitleMPHG">Molotov: Stairs</h1>
+      <iframe class="smoke-pitAngle-ticket open" id="videoMPHG"
+        width="960"
+        height="540" 
+        src="https://www.youtube.com/embed/dgdtbOvEN0E?si=pRafOf7ISzEJNW4P" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="modalOverlayMTM">
+    <div class="modal-content" id="modalContentMTM">
+      <button class="close-btn" id="modalCloseMTM">X</button>
+      <h1 class="modal-title open" id="modalTitleMTM">Molotov: Window</h1>
+      <iframe class="smoke-pitAngle-ticket open" id="videoMTM"
+        width="960"
+        height="540" 
+        src="https://www.youtube.com/embed/_JpgpaiirIo?si=T--pFRDBBUV_uX2A" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="modalOverlayFPND">
+    <div class="modal-content" id="modalContentFPND">
+      <button class="close-btn" id="modalCloseFPND">X</button>
+      <h1 class="modal-title open" id="modalTitleFPND">Flash: A site</h1>
+      <iframe class="smoke-pitAngle-ticket open" id="videoFPND"
+        width="960"
+        height="540" 
+        src="https://www.youtube.com/embed/pydfpzC-jcs?si=YsAXb5ZisEIcYkrf" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+  
+
+
+  <script src="script.js"></script>
+</body>
+</html>
