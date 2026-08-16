@@ -13,10 +13,13 @@
   <main>
     <img src="mirage.webp" alt="map" class="map">
     <img src="smoke.png" alt="" class="smoke trash" id="smokeTrash">
+    <img src="smoke.png" alt="" class="smoke on-trash" id="smokeOnTrash">
     <img src="smoke.png" alt="" class="smoke pit-angle" id="smokePitAngle">
-    <img src="molotov.png" alt="" class="molotov pit-hg" id="molyPitHg">
+    <img src="smoke.png" alt="" class="smoke pit-hg" id="smokePitHg">
+    <img src="smoke.png" alt="" class="smoke b-main-angle" id="smokeBMainAngle">
     <img src="molotov.png" alt="" class="molotov top-mid" id="molyTopMid">
     <img src="flashbang.png" alt="" class="flash pit-near-door" id="flashPitNearDoor">
+    <img src="grenade.png" alt="" class="grenade jungle-angle" id="nadeJungleAngle">
   </main>
   <footer>
       <div>
@@ -31,11 +34,9 @@
     <div class="modal-content" id="modalContentST">
       <button class="close-btn" id="modalCloseST">X</button>
       <h1 class="modal-title open" id="modalTitleSTW">Smoke: Window</h1>
-      <h1 class="modal-title" id="modalTitleSTC">Smoke: Connector</h1>
       <h1 class="modal-title" id="modalTitleSTS">Smoke: Short</h1>
       <div class="target-btn">
         <button class="btn active" id="smokeTrashWind">Window</button>
-        <button class="btn" id="smokeTrashCon">Conn</button>
         <button class="btn" id="smokeTrashShort">Short</button>
       </div>
       <iframe class="smoke-trash-window open" id="videoSTW"
@@ -48,20 +49,10 @@
         referrerpolicy="strict-origin-when-cross-origin" 
         allowfullscreen>
       </iframe>
-      <iframe class="smoke-trash-con" id="videoSTC"
-        width="960"
-        height="540" 
-        src="https://www.youtube.com/embed/dgdtbOvEN0E?si=pRafOf7ISzEJNW4P" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-      </iframe>
       <iframe class="smoke-trash-short" id="videoSTS"
         width="960"
         height="540" 
-        src="https://www.youtube.com/embed/dgdtbOvEN0E?si=pRafOf7ISzEJNW4P" 
+        src="https://www.youtube.com/embed/Suy68i7Bfbo?si=0qbXQ_JzbwmA6rSp" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -87,14 +78,93 @@
     </div>
   </div>
 
-  <div class="modal-overlay hidden" id="modalOverlayMPHG">
-    <div class="modal-content" id="modalContentMPHG">
-      <button class="close-btn" id="modalCloseMPHG">X</button>
-      <h1 class="modal-title open" id="modalTitleMPHG">Molotov: Stairs</h1>
-      <iframe class="smoke-pitAngle-ticket open" id="videoMPHG"
+  <div class="modal-overlay hidden" id="modalOverlaySPHG">
+    <div class="modal-content" id="modalContentSPHG">
+      <button class="close-btn" id="modalCloseSPHG">X</button>
+      <h1 class="modal-title open" id="modalTitleSPHGS">Smoke: Stairs(LMB+RMB)</h1>
+      <h1 class="modal-title" id="modalTitleSPHGC">Smoke: Conn</h1>
+      <div class="target-btn">
+        <button class="btn active" id="smokePHGS">Stairs</button>
+        <button class="btn" id="smokePHGC">Conn</button>
+      </div>
+      <iframe class="smoke-pitAngle-ticket open" id="videoSPHGS"
         width="960"
         height="540" 
-        src="https://www.youtube.com/embed/dgdtbOvEN0E?si=pRafOf7ISzEJNW4P" 
+        src="https://www.youtube.com/embed/hQwc09yd8RY?si=jExlEMi1DEbn8oBi" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+      <iframe class="smoke-pitAngle-ticket" id="videoSPHGC"
+        width="960"
+        height="540" 
+        src="https://www.youtube.com/embed/Ql2GnyjUtzc?si=wx5ZkpbK3rUXH_Ys" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="modalOverlaySOT">
+    <div class="modal-content" id="modalContentSOT">
+      <button class="close-btn" id="modalCloseSOT">X</button>
+      <h1 class="modal-title open" id="modalTitleSOTC">Smoke: Conn</h1>
+      <h1 class="modal-title" id="modalTitleSOTS">Smoke: Short</h1>
+      <div class="target-btn">
+        <button class="btn active" id="smokeSOTC">Conn</button>
+        <button class="btn" id="smokeSOTS">Short</button>
+      </div>
+      <iframe class="smoke-pitAngle-ticket open" id="videoSOTC"
+        width="960"
+        height="540" 
+        src="https://www.youtube.com/embed/Xnuu2Ioj5qw?si=iT6oZKcbLiVXWdEn" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+      <iframe class="smoke-pitAngle-ticket" id="videoSOTS"
+        width="960"
+        height="540" 
+        src="https://www.youtube.com/embed/I5sE6MEdDnE?si=tOqZmr959EwNnp-H" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="modalOverlaySBMA">
+    <div class="modal-content" id="modalContentSBMA">
+      <button class="close-btn" id="modalCloseSBMA">X</button>
+      <h1 class="modal-title open" id="modalTitleSBMAW">Smoke: Window</h1>
+      <h1 class="modal-title" id="modalTitleSBMAD">Smoke: Door</h1>
+      <div class="target-btn">
+        <button class="btn active" id="smokeSBMAW">Window</button>
+        <button class="btn" id="smokeSBMAD">Door</button>
+      </div>
+      <iframe class="smoke-pitAngle-ticket open" id="videoSBMAW"
+        width="960"
+        height="540" 
+        src="https://www.youtube.com/embed/5SnW04vWk68?si=2IODeVUqYL8353No" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+      <iframe class="smoke-pitAngle-ticket" id="videoSBMAD"
+        width="960"
+        height="540" 
+        src="https://www.youtube.com/embed/GXFicWh8OyM?si=LT4R7LzmcKVJWnaa" 
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
@@ -129,6 +199,38 @@
         width="960"
         height="540" 
         src="https://www.youtube.com/embed/pydfpzC-jcs?si=YsAXb5ZisEIcYkrf" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="modalOverlayGJA">
+    <div class="modal-content" id="modalContentGJA">
+      <button class="close-btn" id="modalCloseGJA">X</button>
+      <h1 class="modal-title open" id="modalTitleGJASP">Grenade: Pit start</h1>
+      <h1 class="modal-title" id="modalTitleGJACP">Grenade: Pit center(LMB+RMB)</h1>
+      <div class="target-btn">
+        <button class="btn active" id="nadeGJASP">PitS</button>
+        <button class="btn" id="nadeGJACP">PitC</button>
+      </div>
+      <iframe class="smoke-pitAngle-ticket open" id="videoGJASP"
+        width="960"
+        height="540" 
+        src="https://www.youtube.com/embed/7J9JXoSAAI4?si=Uu6TIDc3Wo7A13fs" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe>
+      <iframe class="smoke-pitAngle-ticket" id="videoGJACP"
+        width="960"
+        height="540" 
+        src="https://www.youtube.com/embed/e-mURA_RWyQ?si=cT-ZwmhPXA3nR4R7"
         title="YouTube video player" 
         frameborder="0" 
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
