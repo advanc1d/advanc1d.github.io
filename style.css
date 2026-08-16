@@ -81,6 +81,16 @@ footer {
   right: 31.8%;
 }
 
+.b-main-angle {
+  top: 6%;
+  right: 44.5%;
+}
+
+.on-trash {
+  top: 23%;
+  right: 28%;
+}
+
 .molotov {
   position: absolute;
   width: 30px;
@@ -123,6 +133,26 @@ footer {
 }
 
 .flash:hover {
+  transform: scale(1.1);
+}
+
+.grenade {
+  position: absolute;
+  width: 30px;
+  border: 3px solid #1b1f23;
+  border-radius: 100%;
+  background-color: #124d00;
+  transition: 0.3s ease;
+  cursor: pointer;
+  display: none;
+}
+
+.jungle-angle {
+  bottom: 42.5%;
+  left: 44.2%;
+}
+
+.grenade:hover {
   transform: scale(1.1);
 }
 
