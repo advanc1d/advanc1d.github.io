@@ -1,346 +1,213 @@
-const modalOverlayST = document.getElementById('modalOverlayST');
-const modalCloseST = document.getElementById('modalCloseST');
-const modalContentST = document.getElementById('modalContentST');
-const smokeTrash = document.getElementById('smokeTrash');
+const mapItems = {
+    smokeTrash: {
+        title: "Smoke: Window/Short",
+        targets: [
+            { name: "Window", videoUrl: "https://www.youtube.com/embed/XE8Ovi1Y7X4?si=djGquT9H7e2D5oQu" },
+            { name: "Short", videoUrl: "https://www.youtube.com/embed/Suy68i7Bfbo?si=0qbXQ_JzbwmA6rSp" }
+        ]
+    },
+    smokePitAngle: {
+        title: "Smoke: Ticket",
+        targets: [
+            { name: "Ticket", videoUrl: "https://www.youtube.com/embed/qu-Um8Y4r98?si=vKIWPqa4vTpSNPuv" }
+        ]
+    },
+    smokeOnTrash: {
+        title: "Smoke: Con/Short",
+        targets: [
+            { name: "Con", videoUrl: "https://www.youtube.com/embed/Xnuu2Ioj5qw?si=G4p5puNyk9tGRVoW" },
+            { name: "Short", videoUrl: "https://www.youtube.com/embed/I5sE6MEdDnE?si=qZOnapucuO_oekHr"}
+        ]
+    },
+    smokePitHg: {
+        title: "Smoke: Stairs/Conn",
+        targets: [
+            { name: "Stairs (LMB+RMB)", videoUrl: "https://www.youtube.com/embed/hQwc09yd8RY?si=jExlEMi1DEbn8oBi" },
+            { name: "Conn", videoUrl: "https://www.youtube.com/embed/Ql2GnyjUtzc?si=wx5ZkpbK3rUXH_Ys" }
+        ]
+    },
+    smokeBMainAngle: {
+        title: "Smoke:  Window/Main",
+        targets: [
+            { name: "Window", videoUrl: "https://www.youtube.com/embed/5SnW04vWk68?si=QNEuqI1OwZ3IjGGs" },
+            { name: "Main", videoUrl: "https://www.youtube.com/embed/GXFicWh8OyM?si=FRbZ-BoykINMiJ5b" }
+        ]
+    },
+    molyTopMid: {
+        title: "Molotov: Top Mid",
+        targets: [
+            { name: "Window", videoUrl: "https://www.youtube.com/embed/_JpgpaiirIo?si=T--pFRDBBUV_uX2A" }
+        ]
+    },
+    flashPitNearDoor: {
+        title: "Flash: A site",
+        targets: [
+            { name: "A site", videoUrl: "https://www.youtube.com/embed/_JpgpaiirIo?si=T--pFRDBBUV_uX2A" }
+        ]
+    },
+    nadeJungleAngle: {
+        title: "Grenade: Pit",
+        targets: [
+            { name: "Pit start", videoUrl: "https://www.youtube.com/embed/7J9JXoSAAI4?si=Bi9V8xVKTKOsvwOl" },
+            { name: "Pit center", videoUrl: "https://www.youtube.com/embed/e-mURA_RWyQ?si=9fLxPtV7yEOsmXhW" }
+        ]
+    },
+    nadeJWindow: {
+        title: "Grenade: Window",
+        targets: [
+            { name: "Window", videoUrl: "https://www.youtube.com/embed/xlAcxVyaLT8?si=pTGMzIIPXkxzBX5X" }
+        ]
+    },
+    smokeTetris: {
+        title: "Smoke: Stairs",
+        targets: [
+            { name: "Stairs", videoUrl: "https://www.youtube.com/embed/_JpgpaiirIo?si=T--pFRDBBUV_uX2A" }
+        ]
+    },
+    smokeBehindBox: {
+        title: "Smoke: Window",
+        targets: [
+            { name: "Window", videoUrl: "https://www.youtube.com/embed/_JpgpaiirIo?si=T--pFRDBBUV_uX2A" }
+        ]
+    },
+    molyBehindBox: {
+        title: "Molotov: Window",
+        targets: [
+            { name: "Window", videoUrl: "https://www.youtube.com/embed/_JpgpaiirIo?si=T--pFRDBBUV_uX2A" }
+        ]
+    },
+    molyBSide: {
+        title: "Molotov: B Aps",
+        targets: [
+            { name: "B Aps", videoUrl: "https://www.youtube.com/embed/_JpgpaiirIo?si=T--pFRDBBUV_uX2A" }
+        ]
+    },
+    flashUnderPalace: {
+        title: "Flash: Pit",
+        targets: [
+            { name: "Pit", videoUrl: "https://www.youtube.com/embed/_JpgpaiirIo?si=T--pFRDBBUV_uX2A" }
+        ]
+    },
+};
 
-smokeTrash.addEventListener('click', () => {
-    modalOverlayST.classList.toggle('hidden');
-});
+const modalOverlay = document.getElementById('globalModal');
+const closeModalBtn = document.getElementById('closeModalBtn');
+const modalTitle = document.getElementById('modalTitle');
+const modalTabs = document.getElementById('modalTabs');
+const videoContainer = document.getElementById('videoContainer');
 
-modalCloseST.addEventListener('click', () => {
-    modalOverlayST.classList.toggle('hidden');
-});
+function openModal(itemId) {
+    const data = mapItems[itemId];
+    if (!data) return;
 
-modalOverlayST.addEventListener('click', (e) => {
-    if (!modalContentST.contains(e.target)) {
-        modalOverlayST.classList.add('hidden');
-    }
-});
-
-const modalOverlaySPA = document.getElementById('modalOverlaySPA');
-const modalCloseSPA = document.getElementById('modalCloseSPA');
-const modalContentSPA = document.getElementById('modalContentSPA');
-const smokePitAngle = document.getElementById('smokePitAngle');
-
-smokePitAngle.addEventListener('click', () => {
-    modalOverlaySPA.classList.toggle('hidden');
-});
-
-modalCloseSPA.addEventListener('click', () => {
-    modalOverlaySPA.classList.toggle('hidden');
-});
-
-modalOverlaySPA.addEventListener('click', (e) => {
-    if (!modalContentSPA.contains(e.target)) {
-        modalOverlaySPA.classList.add('hidden');
-    }
-});
-
-const modalOverlaySPHG = document.getElementById('modalOverlaySPHG');
-const modalCloseSPHG = document.getElementById('modalCloseSPHG');
-const modalContentSPHG = document.getElementById('modalContentSPHG');
-const smokePitHG = document.getElementById('smokePitHg');
-
-smokePitHG.addEventListener('click', () => {
-    modalOverlaySPHG.classList.toggle('hidden');
-});
-
-modalCloseSPHG.addEventListener('click', () => {
-    modalOverlaySPHG.classList.toggle('hidden');
-});
-
-modalOverlaySPHG.addEventListener('click', (e) => {
-    if (!modalContentSPHG.contains(e.target)) {
-        modalOverlaySPHG.classList.add('hidden');
-    }
-});
-
-const modalOverlayMTM = document.getElementById('modalOverlayMTM');
-const modalCloseMTM = document.getElementById('modalCloseMTM');
-const modalContentMTM = document.getElementById('modalContentMTM');
-const molyTopMid = document.getElementById('molyTopMid');
-
-molyTopMid.addEventListener('click', () => {
-    modalOverlayMTM.classList.toggle('hidden');
-});
-
-modalCloseMTM.addEventListener('click', () => {
-    modalOverlayMTM.classList.toggle('hidden');
-});
-
-modalOverlayMTM.addEventListener('click', (e) => {
-    if (!modalContentMTM.contains(e.target)) {
-        modalOverlayMTM.classList.add('hidden');
-    }
-});
-
-const modalOverlayFPND = document.getElementById('modalOverlayFPND');
-const modalCloseFPND = document.getElementById('modalCloseFPND');
-const modalContentFPND = document.getElementById('modalContentFPND');
-const flashPitNearDoor = document.getElementById('flashPitNearDoor');
-
-flashPitNearDoor.addEventListener('click', () => {
-    modalOverlayFPND.classList.toggle('hidden');
-});
-
-modalCloseFPND.addEventListener('click', () => {
-    modalOverlayFPND.classList.toggle('hidden');
-});
-
-modalOverlayFPND.addEventListener('click', (e) => {
-    if (!modalContentFPND.contains(e.target)) {
-        modalOverlayFPND.classList.add('hidden');
-    }
-});
-
-const modalOverlaySBMA = document.getElementById('modalOverlaySBMA');
-const modalCloseSBMA = document.getElementById('modalCloseSBMA');
-const modalContentSBMA = document.getElementById('modalContentSBMA');
-const smokeBMainAngle = document.getElementById('smokeBMainAngle');
-
-smokeBMainAngle.addEventListener('click', () => {
-    modalOverlaySBMA.classList.toggle('hidden');
-});
-
-modalCloseSBMA.addEventListener('click', () => {
-    modalOverlaySBMA.classList.toggle('hidden');
-});
-
-modalOverlaySBMA.addEventListener('click', (e) => {
-    if (!modalContentSBMA.contains(e.target)) {
-        modalOverlaySBMA.classList.add('hidden');
-    }
-});
-
-const modalOverlaySOT = document.getElementById('modalOverlaySOT');
-const modalCloseSOT = document.getElementById('modalCloseSOT');
-const modalContentSOT = document.getElementById('modalContentSOT');
-const smokeOnTrash = document.getElementById('smokeOnTrash');
-
-smokeOnTrash.addEventListener('click', () => {
-    modalOverlaySOT.classList.toggle('hidden');
-});
-
-modalCloseSOT.addEventListener('click', () => {
-    modalOverlaySOT.classList.toggle('hidden');
-});
-
-modalOverlaySOT.addEventListener('click', (e) => {
-    if (!modalContentSOT.contains(e.target)) {
-        modalOverlaySOT.classList.add('hidden');
-    }
-});
-
-const modalOverlayGJA = document.getElementById('modalOverlayGJA');
-const modalCloseGJA = document.getElementById('modalCloseGJA');
-const modalContentGJA = document.getElementById('modalContentGJA');
-const nadeJungleAngle = document.getElementById('nadeJungleAngle');
-
-nadeJungleAngle.addEventListener('click', () => {
-    modalOverlayGJA.classList.toggle('hidden');
-});
-
-modalCloseGJA.addEventListener('click', () => {
-    modalOverlayGJA.classList.toggle('hidden');
-});
-
-modalOverlayGJA.addEventListener('click', (e) => {
-    if (!modalContentGJA.contains(e.target)) {
-        modalOverlayGJA.classList.add('hidden');
-    }
-});
-
-const smokes = document.querySelectorAll('.smoke');
-const molotovs = document.querySelectorAll('.molotov')
-const flashes = document.querySelectorAll('.flash')
-const grenades = document.querySelectorAll('.grenade')
-const btnSmokes = document.getElementById('btnSmokes');
-const btnMolotovs = document.getElementById('btnMolotovs');
-const btnFlashes = document.getElementById('btnFlashes');
-const btnGrenades = document.getElementById('btnGrenades');
-
-btnSmokes.addEventListener('click', () => {
-    btnSmokes.classList.toggle('active');
-    smokes.forEach((el) => {
-        el.classList.toggle('open');
-    });
-});
-
-btnMolotovs.addEventListener('click', () => {
-    btnMolotovs.classList.toggle('active');
-    molotovs.forEach((el) => {
-        el.classList.toggle('open');
-    });
-});
-
-btnFlashes.addEventListener('click', () => {
-    btnFlashes.classList.toggle('active');
-    flashes.forEach((el) => {
-        el.classList.toggle('open');
-    });
-});
-
-btnGrenades.addEventListener('click', () => {
-    btnGrenades.classList.toggle('active');
-    grenades.forEach((el) => {
-        el.classList.toggle('open');
-    });
-});
-
-const smokeTrashWindOver = document.getElementById('smokeTrashWind');
-const smokeTrashConOver = document.getElementById('smokeTrashCon');
-const smokeTrashShortOver = document.getElementById('smokeTrashShort');
-
-const videoSTW = document.getElementById('videoSTW');
-const videoSTC = document.getElementById('videoSTC');
-const videoSTS = document.getElementById('videoSTS');
-
-const modalTitleSTW = document.getElementById('modalTitleSTW');
-const modalTitleSTC = document.getElementById('modalTitleSTC');
-const modalTitleSTS = document.getElementById('modalTitleSTS');
-
-smokeTrashWindOver.addEventListener('click', () => {
-    smokeTrashWindOver.classList.add('active');
-    smokeTrashShortOver.classList.remove('active');
-
-    videoSTW.classList.add('open');
-    videoSTS.classList.remove('open');
-
-    modalTitleSTW.classList.add('open');
-    modalTitleSTS.classList.remove('open');
-})
-
-smokeTrashShortOver.addEventListener('click', () => {
-    smokeTrashWindOver.classList.remove('active');
-    smokeTrashShortOver.classList.add('active');
-
-    videoSTW.classList.remove('open');
-    videoSTS.classList.add('open');
+    modalTitle.textContent = data.title;
     
-    modalTitleSTW.classList.remove('open');
-    modalTitleSTS.classList.add('open');
+    modalTabs.innerHTML = '';
+    videoContainer.innerHTML = '';
+
+    data.targets.forEach((target, index) => {
+        const btn = document.createElement('button');
+        btn.className = `btn ${index === 0 ? 'active' : ''}`;
+        btn.textContent = target.name;
+        
+        btn.addEventListener('click', () => {
+            document.querySelectorAll('#modalTabs .btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            loadVideo(target.videoUrl);
+        });
+
+        modalTabs.appendChild(btn);
+    });
+
+    loadVideo(data.targets[0].videoUrl);
+
+    modalOverlay.classList.remove('hidden');
+}
+
+function loadVideo(url) {
+    videoContainer.innerHTML = `
+        <iframe width="960" height="500" 
+            src="${url}" 
+            title="YouTube video player" frameborder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+        </iframe>
+    `;
+}
+
+document.querySelectorAll('.map-item').forEach(item => {
+    item.addEventListener('click', (e) => {
+        openModal(e.target.id);
+    });
+});
+
+function closeModal() {
+    modalOverlay.classList.add('hidden');
+    videoContainer.innerHTML = '';
+}
+
+closeModalBtn.addEventListener('click', closeModal);
+modalOverlay.addEventListener('click', (e) => {
+    if (e.target === modalOverlay) closeModal();
+});
+
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const SideFilterButtons = document.querySelectorAll('.side')
+
+
+filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        btn.classList.toggle('active');
+        const type = btn.getAttribute('data-type');
+        const itemsOnMap = document.querySelectorAll(`.${type}`);
+        
+        itemsOnMap.forEach(item => {
+            item.classList.toggle('open');
+        });
+    });
+});
+
+const mapChanger = document.getElementById('mapChanger');
+
+mapChanger.addEventListener('click', () => {
+
+    document.querySelectorAll('.map').forEach(item => {
+        item.classList.toggle('open');  
+    })
 })
 
-const smokePHGS = document.getElementById('smokePHGS');
-const smokePHGC = document.getElementById('smokePHGC');
+const radioAudio = new Audio('buster.mp3');
+radioAudio.loop = true; 
+radioAudio.volume = 0.3; 
+const radioBtn = document.getElementById('radio-btn');
 
-const videoSPHGS = document.getElementById('videoSPHGS');
-const videoSPHGC = document.getElementById('videoSPHGC');
+radioBtn.addEventListener('click', () => {
+  if (radioAudio.paused) {
+    radioAudio.play();
+  } 
+  else {
+    radioAudio.pause();
+  }
+});
 
-const modalTitleSPHGS = document.getElementById('modalTitleSPHGS');
-const modalTitleSPHGC = document.getElementById('modalTitleSPHGC');
+const globalModalCommands = document.getElementById('globalModalCommands');
+const closeModalBtnCommands = document.getElementById('closeModalBtnCommands');
+const modalTitleCommands = document.getElementById('modalTitleCommands');
+const ConsoleCommands = document.getElementById('ConsoleCommands');
+const modalContentCommands = document.getElementById('modalContentCommands');
 
-smokePHGS.addEventListener('click', () => {
-    smokePHGS.classList.add('active');
-    smokePHGC.classList.remove('active');
-
-    videoSPHGS.classList.add('open');
-    videoSPHGC.classList.remove('open');
-
-    modalTitleSPHGS.classList.add('open');
-    modalTitleSPHGC.classList.remove('open');
+ConsoleCommands.addEventListener(('click'), () => {
+    globalModalCommands.classList.toggle('hidden');
 })
 
-smokePHGC.addEventListener('click', () => {
-    smokePHGS.classList.remove('active');
-    smokePHGC.classList.add('active');
-
-    videoSPHGS.classList.remove('open');
-    videoSPHGC.classList.add('open');
-
-    modalTitleSPHGS.classList.remove('open');
-    modalTitleSPHGC.classList.add('open');
+closeModalBtnCommands.addEventListener(('click'), () => {
+    globalModalCommands.classList.toggle('hidden');
 })
 
-const smokeSBMAW = document.getElementById('smokeSBMAW');
-const smokeSBMAD = document.getElementById('smokeSBMAD');
-
-const videoSBMAW = document.getElementById('videoSBMAW');
-const videoSBMAD = document.getElementById('videoSBMAD');
-
-const modalTitleSBMAW = document.getElementById('modalTitleSBMAW');
-const modalTitleSBMAD = document.getElementById('modalTitleSBMAD');
-
-smokeSBMAW.addEventListener('click', () => {
-    smokeSBMAW.classList.add('active');
-    smokeSBMAD.classList.remove('active');
-
-    videoSBMAW.classList.add('open');
-    videoSBMAD.classList.remove('open');
-
-    modalTitleSBMAW.classList.add('open');
-    modalTitleSBMAD.classList.remove('open');
-})
-
-smokeSBMAD.addEventListener('click', () => {
-    smokeSBMAW.classList.remove('active');
-    smokeSBMAD.classList.add('active');
-
-    videoSBMAW.classList.remove('open');
-    videoSBMAD.classList.add('open');
-
-    modalTitleSBMAW.classList.remove('open');
-    modalTitleSBMAD.classList.add('open');
-})
-
-const smokeSOTC = document.getElementById('smokeSOTC');
-const smokeSOTS = document.getElementById('smokeSOTS');
-
-const videoSOTC = document.getElementById('videoSOTC');
-const videoSOTS = document.getElementById('videoSOTS');
-
-const modalTitleSOTC = document.getElementById('modalTitleSOTC');
-const modalTitleSOTS = document.getElementById('modalTitleSOTS');
-
-smokeSOTC.addEventListener('click', () => {
-    smokeSOTC.classList.add('active');
-    smokeSOTS.classList.remove('active');
-
-    videoSOTC.classList.add('open');
-    videoSOTS.classList.remove('open');
-
-    modalTitleSOTC.classList.add('open');
-    modalTitleSOTS.classList.remove('open');
-})
-
-smokeSOTS.addEventListener('click', () => {
-    smokeSOTC.classList.remove('active');
-    smokeSOTS.classList.add('active');
-
-    videoSOTC.classList.remove('open');
-    videoSOTS.classList.add('open');
-
-    modalTitleSOTC.classList.remove('open');
-    modalTitleSOTS.classList.add('open');
-})
-
-const nadeGJASP = document.getElementById('nadeGJASP');
-const nadeGJACP = document.getElementById('nadeGJACP');
-
-const videoGJASP = document.getElementById('videoGJASP');
-const videoGJACP = document.getElementById('videoGJACP');
-
-const modalTitleGJASP = document.getElementById('modalTitleGJASP');
-const modalTitleGJACP = document.getElementById('modalTitleGJACP');
-
-nadeGJASP.addEventListener('click', () => {
-    nadeGJASP.classList.add('active');
-    nadeGJACP.classList.remove('active');
-
-    videoGJASP.classList.add('open');
-    videoGJACP.classList.remove('open');
-
-    modalTitleGJASP.classList.add('open');
-    modalTitleGJACP.classList.remove('open');
-})
-
-nadeGJACP.addEventListener('click', () => {
-    nadeGJASP.classList.remove('active');
-    nadeGJACP.classList.add('active');
-
-    videoGJASP.classList.remove('open');
-    videoGJACP.classList.add('open');
-
-    modalTitleGJASP.classList.remove('open');
-    modalTitleGJACP.classList.add('open');
+globalModalCommands.addEventListener('click', (e) => {
+    if (!modalContentCommands.contains(e.target)) {
+        globalModalCommands.classList.toggle('hidden');
+    }
 })
