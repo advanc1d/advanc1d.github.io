@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cs2 guide map</title>
+  <title>CS2 Guide map</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,236 +11,149 @@
     <h1>CS2 Guide map</h1>
   </header>
   <main>
-    <img src="mirage.webp" alt="map" class="map">
-    <img src="smoke.png" alt="" class="smoke trash" id="smokeTrash">
-    <img src="smoke.png" alt="" class="smoke on-trash" id="smokeOnTrash">
-    <img src="smoke.png" alt="" class="smoke pit-angle" id="smokePitAngle">
-    <img src="smoke.png" alt="" class="smoke pit-hg" id="smokePitHg">
-    <img src="smoke.png" alt="" class="smoke b-main-angle" id="smokeBMainAngle">
-    <img src="molotov.png" alt="" class="molotov top-mid" id="molyTopMid">
-    <img src="flashbang.png" alt="" class="flash pit-near-door" id="flashPitNearDoor">
-    <img src="grenade.png" alt="" class="grenade jungle-angle" id="nadeJungleAngle">
+    <img src="img/mirage.webp" alt="map" class="map open" id="map">
+    <img src="img/mirage-positions.webp" alt="map" class="map" id="mapPositions">
+    <!-- Додаємо спільний клас "map-item" для всіх іконок, щоб легко їх шукати в JS -->
+    <img src="img/smoke.png" class="smoke map-item trash" id="smokeTrash">
+    <img src="img/smoke.png" class="smoke map-item on-trash" id="smokeOnTrash">
+    <img src="img/smoke.png" class="smoke map-item pit-angle" id="smokePitAngle">
+    <img src="img/smoke.png" class="smoke map-item pit-hg" id="smokePitHg">
+    <img src="img/smoke.png" class="smoke map-item b-main-angle" id="smokeBMainAngle">
+    <img src="img/smoke.png" class="smoke map-item tetris" id="smokeTetris">
+    <img src="img/smoke.png" class="smoke map-item BehindBox" id="smokeBehindBox">
+    <img src="img/molotov.png" class="molotov map-item top-mid" id="molyTopMid">
+    <img src="img/molotov.png" class="molotov map-item molyBehindBox" id="molyBehindBox">
+    <img src="img/molotov.png" class="molotov map-item bSide" id="molyBSide">
+    <img src="img/flashbang.png" class="flash map-item pit-near-door" id="flashPitNearDoor">
+    <img src="img/flashbang.png" class="flash map-item under-palace" id="flashUnderPalace">
+    <img src="img/grenade.png" class="grenade map-item jungle-angle" id="nadeJungleAngle">
+    <img src="img/grenade.png" class="grenade map-item window-nade" id="nadeJWindow">
   </main>
-  <footer>
-      <div>
-        <button class="btn" id="btnSmokes">Smoke</button>
-        <button class="btn" id="btnMolotovs">Molotov</button>
-        <button class="btn" id="btnFlashes">Flash</button>
-        <button class="btn" id="btnGrenades">Grenade</button>
-      </div>
-      <button class="btn">Chips</button>
-  </footer>
-  <div class="modal-overlay hidden" id="modalOverlayST">
-    <div class="modal-content" id="modalContentST">
-      <button class="close-btn" id="modalCloseST">X</button>
-      <h1 class="modal-title open" id="modalTitleSTW">Smoke: Window</h1>
-      <h1 class="modal-title" id="modalTitleSTS">Smoke: Short</h1>
-      <div class="target-btn">
-        <button class="btn active" id="smokeTrashWind">Window</button>
-        <button class="btn" id="smokeTrashShort">Short</button>
-      </div>
-      <iframe class="smoke-trash-window open" id="videoSTW"
-        width="960"
-        height="540" 
-        src="https://www.youtube.com/embed/XE8Ovi1Y7X4?si=djGquT9H7e2D5oQu" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-      </iframe>
-      <iframe class="smoke-trash-short" id="videoSTS"
-        width="960"
-        height="540" 
-        src="https://www.youtube.com/embed/Suy68i7Bfbo?si=0qbXQ_JzbwmA6rSp" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-  <div class="modal-overlay hidden" id="modalOverlaySPA">
-    <div class="modal-content" id="modalContentSPA">
-      <button class="close-btn" id="modalCloseSPA">X</button>
-      <h1 class="modal-title open" id="modalTitleSPA">Smoke: Ticket</h1>
-      <iframe class="smoke-pitAngle-ticket open" id="videoSPAT"
-        width="960"
-        height="540" 
-        src="https://www.youtube.com/embed/qu-Um8Y4r98?si=vKIWPqa4vTpSNPuv" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <div class="modal-overlay hidden" id="modalOverlaySPHG">
-    <div class="modal-content" id="modalContentSPHG">
-      <button class="close-btn" id="modalCloseSPHG">X</button>
-      <h1 class="modal-title open" id="modalTitleSPHGS">Smoke: Stairs(LMB+RMB)</h1>
-      <h1 class="modal-title" id="modalTitleSPHGC">Smoke: Conn</h1>
-      <div class="target-btn">
-        <button class="btn active" id="smokePHGS">Stairs</button>
-        <button class="btn" id="smokePHGC">Conn</button>
-      </div>
-      <iframe class="smoke-pitAngle-ticket open" id="videoSPHGS"
-        width="960"
-        height="540" 
-        src="https://www.youtube.com/embed/hQwc09yd8RY?si=jExlEMi1DEbn8oBi" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-      </iframe>
-      <iframe class="smoke-pitAngle-ticket" id="videoSPHGC"
-        width="960"
-        height="540" 
-        src="https://www.youtube.com/embed/Ql2GnyjUtzc?si=wx5ZkpbK3rUXH_Ys" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <div class="modal-overlay hidden" id="modalOverlaySOT">
-    <div class="modal-content" id="modalContentSOT">
-      <button class="close-btn" id="modalCloseSOT">X</button>
-      <h1 class="modal-title open" id="modalTitleSOTC">Smoke: Conn</h1>
-      <h1 class="modal-title" id="modalTitleSOTS">Smoke: Short</h1>
-      <div class="target-btn">
-        <button class="btn active" id="smokeSOTC">Conn</button>
-        <button class="btn" id="smokeSOTS">Short</button>
-      </div>
-      <iframe class="smoke-pitAngle-ticket open" id="videoSOTC"
-        width="960"
-        height="540" 
-        src="https://www.youtube.com/embed/Xnuu2Ioj5qw?si=iT6oZKcbLiVXWdEn" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-      </iframe>
-      <iframe class="smoke-pitAngle-ticket" id="videoSOTS"
-        width="960"
-        height="540" 
-        src="https://www.youtube.com/embed/I5sE6MEdDnE?si=tOqZmr959EwNnp-H" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <div class="modal-overlay hidden" id="modalOverlaySBMA">
-    <div class="modal-content" id="modalContentSBMA">
-      <button class="close-btn" id="modalCloseSBMA">X</button>
-      <h1 class="modal-title open" id="modalTitleSBMAW">Smoke: Window</h1>
-      <h1 class="modal-title" id="modalTitleSBMAD">Smoke: Door</h1>
-      <div class="target-btn">
-        <button class="btn active" id="smokeSBMAW">Window</button>
-        <button class="btn" id="smokeSBMAD">Door</button>
-      </div>
-      <iframe class="smoke-pitAngle-ticket open" id="videoSBMAW"
-        width="960"
-        height="540" 
-        src="https://www.youtube.com/embed/5SnW04vWk68?si=2IODeVUqYL8353No" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-      </iframe>
-      <iframe class="smoke-pitAngle-ticket" id="videoSBMAD"
-        width="960"
-        height="540" 
-        src="https://www.youtube.com/embed/GXFicWh8OyM?si=LT4R7LzmcKVJWnaa" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <div class="modal-overlay hidden" id="modalOverlayMTM">
-    <div class="modal-content" id="modalContentMTM">
-      <button class="close-btn" id="modalCloseMTM">X</button>
-      <h1 class="modal-title open" id="modalTitleMTM">Molotov: Window</h1>
-      <iframe class="smoke-pitAngle-ticket open" id="videoMTM"
-        width="960"
-        height="540" 
-        src="https://www.youtube.com/embed/_JpgpaiirIo?si=T--pFRDBBUV_uX2A" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <div class="modal-overlay hidden" id="modalOverlayFPND">
-    <div class="modal-content" id="modalContentFPND">
-      <button class="close-btn" id="modalCloseFPND">X</button>
-      <h1 class="modal-title open" id="modalTitleFPND">Flash: A site</h1>
-      <iframe class="smoke-pitAngle-ticket open" id="videoFPND"
-        width="960"
-        height="540" 
-        src="https://www.youtube.com/embed/pydfpzC-jcs?si=YsAXb5ZisEIcYkrf" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
-
-  <div class="modal-overlay hidden" id="modalOverlayGJA">
-    <div class="modal-content" id="modalContentGJA">
-      <button class="close-btn" id="modalCloseGJA">X</button>
-      <h1 class="modal-title open" id="modalTitleGJASP">Grenade: Pit start</h1>
-      <h1 class="modal-title" id="modalTitleGJACP">Grenade: Pit center(LMB+RMB)</h1>
-      <div class="target-btn">
-        <button class="btn active" id="nadeGJASP">PitS</button>
-        <button class="btn" id="nadeGJACP">PitC</button>
-      </div>
-      <iframe class="smoke-pitAngle-ticket open" id="videoGJASP"
-        width="960"
-        height="540" 
-        src="https://www.youtube.com/embed/7J9JXoSAAI4?si=Uu6TIDc3Wo7A13fs" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-      </iframe>
-      <iframe class="smoke-pitAngle-ticket" id="videoGJACP"
-        width="960"
-        height="540" 
-        src="https://www.youtube.com/embed/e-mURA_RWyQ?si=cT-ZwmhPXA3nR4R7"
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-      </iframe>
-    </div>
-  </div>
   
+  <footer>
+      <div class="control-btn">
+        <div class="btn-row">
+          <button class="btn filter-btn" data-type="smoke">Smoke</button>
+          <button class="btn filter-btn" data-type="molotov">Molotov</button>
+          <button class="btn filter-btn" data-type="flash">Flash</button>
+          <button class="btn filter-btn" data-type="grenade">Grenade</button>
+        </div>
+        <div class="btn-row">
+          <button class="btn filter-btn" data-type="chips">Chips</button>
+          <button class="btn filter-btn" id="mapChanger">Positions</button>
+          <button id="radio-btn" class="btn filter-btn">RADIO</button>
+        </div>
+      </div>
+      <div class="tops">
+        <div class="top">
+          <h2><a href="https://www.hltv.org/valve-ranking/teams/2026/august/22">VRS TOP</a></h2>
+          <div class="in-top">
+            <div class="team">1. Spirit <img src="img/spirit.webp" alt=""></div>
+            <div class="team">2. Falcons <img src="img/falcons.webp" alt=""></div>
+            <div class="team">3. MOUZ <img src="img/mouz.svg" alt=""></div>
+            <div class="team">4. LEGACY <img src="img/legacy.webp" alt=""></div>
+            <div class="team">5. FUT <img src="img/fut.webp" alt=""></div>
+            <div class="team">6. FURIA <img src="img/furia.svg" alt=""></div>
+            <div class="team">7. g2 <img src="img/g2.webp" alt=""></div>
+            <div class="team">8. VITALITY <img src="img/vitality.webp" alt=""></div>
+            <div class="team">9. 9z <img src="img/9z.webp" alt=""></div>
+            <div class="team">10. FaZe <img src="img/faze.webp" alt=""></div>
+          </div>
+        </div>
+        <div class="top">
+          <h2><a href="https://www.hltv.org/ranking/teams/2026/august/17">HLTV TOP</a></h2>
+          <div class="in-top">
+            <div class="team">1. Spirit <img src="img/spirit.webp" alt=""></div>
+            <div class="team">2. Falcons <img src="img/falcons.webp" alt=""></div>
+            <div class="team">3. FURIA <img src="img/furia.svg" alt=""></div>
+            <div class="team">4. Vitality <img src="img/vitality.webp" alt=""></div>
+            <div class="team">5. MOUZ <img src="img/mouz.svg" alt=""></div>
+            <div class="team">6. Fut <img src="img/fut.webp" alt=""></div>
+            <div class="team">7. Legacy <img src="img/legacy.webp" alt=""></div>
+            <div class="team">8. NaVi <img src="img/navi.svg" alt=""></div>
+            <div class="team">9. g2 <img src="img/g2.webp" alt=""></div>
+            <div class="team">10. FaZe <img src="img/faze.webp" alt=""></div>
+          </div>
+        </div>
+        <div class="top">
+          <h2><a href="https://www.hltv.org/stats/players?startDate=2026-05-22&endDate=2026-08-22">TOP PLAYERS</a></h2>
+          <div class="in-top">
+            <div class="team">1. Staehr <img src="img/astralis.svg" alt=""></div>
+            <div class="team">2. donk <img src="img/spirit.webp" alt=""></div>
+            <div class="team">3. ZywOo <img src="img/vitality.webp" alt=""></div>
+            <div class="team">4. m0NESY <img src="img/falcons.webp" alt=""></div>
+            <div class="team">5. try <img src="img/legacy.webp" alt=""></div>
+            <div class="team">6. jabbi <img src="img/astralis.svg" alt=""></div>
+            <div class="team">7. HeavyGod <img src="img/g2.webp" alt=""></div>
+            <div class="team">8. molodoy <img src="img/furia.svg" alt=""></div>
+            <div class="team">9. sh1ro <img src="img/spirit.webp" alt=""></div>
+            <div class="team">10. Niko <img src="img/falcons.webp" alt=""></div>
+            <div class="team">11. xfl0ud <img src="img/fut.webp" alt=""></div>
+            <div class="team">12. Twistzz <img src="img/faze.webp" alt=""></div>
+            <div class="team">13. Wicadia <img src="img/aurora.webp" alt=""></div>
+            <div class="team">14. Magnojez <img src="img/bb.webp" alt=""></div>
+            <div class="team">15. KSCERATO <img src="img/furia.svg" alt=""></div>
+            <div class="team">16. r1nkle <img src="img/g2.webp" alt=""></div>
+            <div class="team">17. kyousuke <img src="img/falcons.webp" alt=""></div>
+            <div class="team">18. b1t <img src="img/navi.svg" alt=""></div>
+            <div class="team">19. dem0n <img src="img/fut.webp" alt=""></div>
+            <div class="team">20. Spinx <img src="img/mouz.svg" alt=""></div>
+          </div>
+        </div>
+      </div>
+      <div class="useful">
+        <button class="btn useful-text">Useful:</button>
+        <button class="btn" id="ConsoleCommands">console commands</button>
+      </div>
+  </footer>
 
+  <div class="modal-overlay hidden" id="globalModal">
+    <div class="modal-content">
+      <button class="close-btn" id="closeModalBtn">X</button>
+      <h1 class="modal-title" id="modalTitle">Заголовок</h1>
+      <div class="target-btn" id="modalTabs">
+      </div>
+      <div id="videoContainer"></div>
+    </div>
+  </div>
+
+  <div class="modal-overlay hidden" id="globalModalCommands">
+    <div class="modal-content" id="modalContentCommands">
+      <button class="close-btn" id="closeModalBtnCommands">X</button>
+      <h1 class="modal-title" id="modalTitleCommands">Console Commands</h1>
+      <div class="commands">
+        <h1>Команды для тренировки</h1>
+        <p>sv_cheats 1 — Включает режим читерских и отладочных команд на сервере.</p>
+        <p>sv_infinite_ammo 1 — Дает бесконечные патроны и гранаты без перезарядки.</p>
+        <p>sv_rethrow_last_grenade — Автоматически повторяет бросок последней брошенной гранаты.</p>
+        <p>sv_showimpacts 1 — Показывает цветные следы от пуль и точки пробития стен.</p>
+        <p>cl_showpos 1 — Отображает точную скорость движения и ваши координаты.</p>
+        <p>give weapon_[gun] - Выдает указанное оружие или гранату прямо в руки.</p>
+        <p>mp_buy_anywhere 1 — Позволяет покупать оружие в любой точке карты.</h1>
+        <p>mp_restartgame 1 — Быстрая перезагрузка раунда.</p>
+        <p>mp_roundtime_defuse 60 — Делает раунд 60 минут.</p>
+        <p>mp_buytime 9999 — Позволяет покупать оружие и гранаты в любой момент раунда.</p>
+        <p>mp_maxmoney 60000; mp_startmoney 60000 — Дает 60,000$ на старте раунда.</p>
+        <p>mp_freezetime — Убирает задержку в начале раунда.</p>
+        
+
+        <h1>Работа с ботами</h1>
+        <p>bot_kick — Удаляет всех ботов с карты.</p>
+        <p>bot_place — Ставит бота ровно в ту точку, куда смотрит твой прицел.</p>
+        <p>bot_stop 1 — Замораживает ботов, чтобы они не двигались и не стреляли.</p>
+        <p>mp_limitteams 0; mp_autoteambalance 0 — Позволяет заходить за одну команду любому количеству игроков.</p>
+        <p>mp_warmup_end — Мгновенно завершает разминку и запускает основную игру.</p>
+        <p>bot_add_ct / bot_add_t — Добавляет одного бота за команду спецназа или террористов.</p>
+        <p>bot_crouch 1 — Заставляет всех ботов на карте присесть.</p>
+        <p>bot_mimic 1 — Заставляет ботов точно повторять все движения.</p>
+
+        <h1>Полезны команды</h1>
+        <p>Bind [btn] [command] — Включает режим читерских и отладочных команд на сервере.</p>
+        <p>mp_drop_knife_enable 1 — Разрешает выбрасывать нож на землю.</p>
+      </div>
+    </div>
+  </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
